@@ -11,8 +11,8 @@
 	<groupId>com.thisara</groupId>
 	<artifactId>myfleet</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>myfleet</name>
-	<description>Myfleet</description>
+	<name>myfleet-cars</name>
+	<description>Myfleet-Cars</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -72,14 +72,14 @@
 		    <artifactId>myfleet.validators</artifactId>
 		    <version>1.0.0</version>
 		    <scope>system</scope>
-		    <systemPath>/home/thisara/eclipse-myfleet-distributed/myfleet.validators/target/myfleet.validators-1.0.0.jar</systemPath>
+		    <systemPath>/home/thisara/myfleet-distributed-kafka/myfleet.validators/target/myfleet.validators-1.0.0.jar</systemPath>
 		</dependency>
 		<dependency>
 		    <groupId>com.thisara</groupId>
 		    <artifactId>myfleet.utils</artifactId>
 		    <version>1.0.0</version>
 		    <scope>system</scope>
-		    <systemPath>/home/thisara/eclipse-myfleet-distributed/myfleet.utils/target/myfleet.utils-1.0.0.jar</systemPath>
+		    <systemPath>/home/thisara/myfleet-distributed-kafka/myfleet.utils/target/myfleet.utils-1.0.0.jar</systemPath>
 		</dependency>
 	</dependencies>
 	<dependencyManagement>
