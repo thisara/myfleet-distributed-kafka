@@ -1,0 +1,18 @@
+insert into FL_DRIVER (fd_id, fd_first_name, fd_last_name, fd_license_number, record_status) values (1001, 'Joseph', 'Cooray', 'JS48464', 1);
+insert into FL_DRIVER (fd_id, fd_first_name, fd_last_name, fd_license_number, record_status) values (1002, 'Joseph', 'Cooray', 'JS48464', 1);
+insert into FL_DRIVER (fd_id, fd_first_name, fd_last_name, fd_license_number, record_status) values (1003, 'Joseph', 'Cooray', 'JS48464', 1);
+insert into FL_DRIVER (fd_id, fd_first_name, fd_last_name, fd_license_number, record_status) values (1004, 'Joseph', 'Cooray', 'JS48464', 1);
+insert into FL_DRIVER (fd_id, fd_first_name, fd_last_name, fd_license_number, record_status) values (1005, 'Joseph', 'Cooray', 'JS48464', 1);
+
+insert into FL_TRIP (ft_id, ft_trip_start_timestamp, ft_trip_end_timestamp, ft_trip_start_timezone, ft_trip_end_timezone, ft_distance, ft_number, record_status, ft_car_reg_number, fd_id) values (1001, '2020-12-01', '2020-12-21', 'Asia/Colombo', 'Asia/Colombo', 200.50, '1001T', 1, 1001, 1002);
+insert into FL_TRIP (ft_id, ft_trip_start_timestamp, ft_trip_end_timestamp, ft_trip_start_timezone, ft_trip_end_timezone,ft_distance, ft_number, record_status, ft_car_reg_number, fd_id) values (1002, '2020-11-02', '2020-12-21', 'Asia/Colombo', 'Asia/Colombo', 300.50, '1002T', 1, 1003, 1003);
+insert into FL_TRIP (ft_id, ft_trip_start_timestamp, ft_trip_end_timestamp, ft_trip_start_timezone, ft_trip_end_timezone,ft_distance, ft_number, record_status, ft_car_reg_number, fd_id) values (1003, '2021-02-01', '2020-12-21', 'Asia/Colombo', 'Asia/Colombo', 400.50, '1003T', 1, 1002, 1005);
+insert into FL_TRIP (ft_id, ft_trip_start_timestamp, ft_trip_end_timestamp, ft_trip_start_timezone, ft_trip_end_timezone,ft_distance, ft_number, record_status, ft_car_reg_number, fd_id) values (1004, '2021-03-01', '2020-12-21', 'Asia/Colombo', 'Asia/Colombo', 300.50, '1004T', 1, 1004, 1004);
+insert into FL_TRIP (ft_id, ft_trip_start_timestamp, ft_trip_end_timestamp, ft_trip_start_timezone, ft_trip_end_timezone,ft_distance, ft_number, record_status, ft_car_reg_number, fd_id) values (1005, '2020-10-01', '2020-12-21', 'Asia/Colombo', 'Asia/Colombo', 200.50, '1005T', 1, 1006, 1005);
+insert into FL_TRIP (ft_id, ft_trip_start_timestamp, ft_trip_end_timestamp, ft_trip_start_timezone, ft_trip_end_timezone,ft_distance, ft_number, record_status, ft_car_reg_number, fd_id) values (1006, '2020-12-12', '2020-12-21', 'Asia/Colombo', 'Asia/Colombo', 400.50, '1006T', 1, 1007, 1003);
+insert into FL_TRIP (ft_id, ft_trip_start_timestamp, ft_trip_end_timestamp, ft_trip_start_timezone, ft_trip_end_timezone,ft_distance, ft_number, record_status, ft_car_reg_number, fd_id) values (1007, '2021-01-01', '2020-12-21', 'Asia/Colombo', 'Asia/Colombo', 400.50, '1007T', 1, 1008, 1002);
+insert into FL_TRIP (ft_id, ft_trip_start_timestamp, ft_trip_end_timestamp, ft_trip_start_timezone, ft_trip_end_timezone,ft_distance, ft_number, record_status, ft_car_reg_number, fd_id) values (1008, '2021-01-05', '2020-12-21', 'Asia/Colombo', 'Asia/Colombo', 350.50, '1008T', 1, 1009, 1001);
+insert into FL_TRIP (ft_id, ft_trip_start_timestamp, ft_trip_end_timestamp, ft_trip_start_timezone, ft_trip_end_timezone,ft_distance, ft_number, record_status, ft_car_reg_number, fd_id) values (1009, '2020-12-15', '2020-12-21', 'Asia/Colombo', 'Asia/Colombo', 460.50, '1009T', 1, 1002, 1004);
+insert into FL_TRIP (ft_id, ft_trip_start_timestamp, ft_trip_end_timestamp, ft_trip_start_timezone, ft_trip_end_timezone,ft_distance, ft_number, record_status, ft_car_reg_number, fd_id) values (1010, '2021-02-25', '2020-12-21', 'Asia/Colombo', 'Asia/Colombo', 270.50, '1010T', 1, 1004, 1004);
+
+

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="30">
+    <Properties>
+        <Property name="LOG_PATTERN">
+            %d{yyyy-MM-dd HH:mm:ss.SSS} %5p ${hostName} --- [%15.15t] %-40.40c{1.} : %m%n%ex
+        </Property>
+    </Properties>
+    <Appenders>
+        <Console name="ConsoleAppender" target="SYSTEM_OUT" follow="true">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+        </Console>
+        <File name="MyFile" fileName="/home/thisara/eclipse/my.log" immediateFlush="false" append="false">
+            <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+        <Kafka name="KafkaErrorAppender" topic="myfleet_error_log">
+	      	<PatternLayout>
+	        	<Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+	      	</PatternLayout>
+	        <Property name="bootstrap.servers">192.168.1.7:9092,192.168.1.8:9092</Property>
+	    </Kafka>
+        <Kafka name="KafkaAppender" topic="myfleet_info_log">
+	      	<PatternLayout>
+	        	<Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+	      	</PatternLayout>
+	        <Property name="bootstrap.servers">192.168.1.7:9092,192.168.1.8:9092</Property>
+	    </Kafka>
+        <RollingFile name="RollingFile" fileName="/home/thisara/eclipse/app.log" filePattern="/home/thisara/eclipse/app-%d{MM-dd-yyyy}.log.gz"
+                 ignoreExceptions="false">
+	      <PatternLayout>
+	        <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+	      </PatternLayout>
+	      <TimeBasedTriggeringPolicy />
+	    </RollingFile>
+        <Failover name="Failover" primary="KafkaErrorAppender">
+      		<Failovers>
+        		<AppenderRef ref="RollingFile"/>
+        		<AppenderRef ref="ConsoleAppender"/>
+      		</Failovers>
+    	</Failover>
+	    <Async name="AsyncAppenderKafka" blocking="false">
+	      <AppenderRef ref="KafkaAppender"/>
+	    </Async> 
+    </Appenders>
+    <Loggers>
+        <Root level="INFO">
+            <AppenderRef ref="AsyncAppenderKafka"/>
+        </Root>
+        <Logger name="com" level="ERROR">
+        	<AppenderRef ref="Failover"/>
+        </Logger>
+    </Loggers>
+</Configuration>
