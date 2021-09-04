@@ -3,6 +3,7 @@
 	<name>myfleet.utils</name>
 	<comment></comment>
 	<projects>
+		<project>myfleet.validators</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

@@ -3,6 +3,8 @@
 	<name>myfleet-trips</name>
 	<comment></comment>
 	<projects>
+		<project>myfleet.utils</project>
+		<project>myfleet.validators</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
