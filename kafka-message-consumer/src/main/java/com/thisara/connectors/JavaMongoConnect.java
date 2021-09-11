@@ -1,24 +1,35 @@
-package com.thisara.message.consumer;
+package com.thisara.connectors;
 
 import java.time.LocalDateTime;
 
 import org.bson.Document;
 import org.bson.types.ObjectId;
 import org.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Repository;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mongodb.MongoClient;
+import com.mongodb.MongoClientOptions;
 import com.mongodb.client.MongoCollection;
 
+/*
+ * Copyright the original author.
+ * 
+ * @author Thisara Alawala
+ * @author https://mytechblogs.com
+ * @author https://www.youtube.com/channel/UCRJtsC5VYYhmKnEqAGLKc2A
+ * @since 2021-08-30
+ */
 @Repository
 public class JavaMongoConnect {
+	
+	private Logger logger = LoggerFactory.getLogger(JavaMongoConnect.class);
 	
 	private static JavaMongoConnect javaMongoConnect;
 	
@@ -48,7 +59,7 @@ public class JavaMongoConnect {
 			ObjectMapper objectMapper = new ObjectMapper();
 			
 			int defaultStatus = 1;
-
+			
 			JsonNode jsonNode = objectMapper.readTree(message);
 			
 			JsonNode serverInfo = jsonNode.get("server-info");
@@ -58,7 +69,7 @@ public class JavaMongoConnect {
 			JsonNode apiResponse = exceptionDetail.get("api-response");
 			JsonNode stacktrace = exceptionDetail.get("stacktrace");
 			
-			MongoCollection<Document> errorLogCollection = mongoClient.getDatabase("myfleet").getCollection(env.getProperty("db.collection"));
+			MongoCollection<Document> errorLogCollection = mongoClient.getDatabase(env.getProperty("db.name")).getCollection(env.getProperty("db.collection"));
 	        
 			Document errorLog = new Document("_id", new ObjectId());
 			
@@ -75,14 +86,16 @@ public class JavaMongoConnect {
 					.append("updated_date", "")
 					.append("updated_by", "");
 					
+			logger.info("Inserting " + errorLog);
+			
 			errorLogCollection.insertOne(errorLog);
-	         
-	        mongoClient.close();
+			
+			mongoClient.close();
 			
 	        saveStatus = true;
         
 		}catch(Exception e) {
-			e.printStackTrace();
+			logger.error("Something went wrong : " + e.getLocalizedMessage());
 		}finally {
 			mongoClient.close();
 		}

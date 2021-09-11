@@ -50,11 +50,6 @@ public class TripServiceImpl implements TripService{
 		try {
 			logger.info("searching for trip from : " + fromDate + " for registration number : " + carRegistrationNumber) ;
 			
-			logger.debug("This is a debug message");
-	        logger.info("This is an info message");
-	        logger.warn("This is a warn message");
-	        logger.error("This is an error message");
-			
 			trips =	tripDAO.search(fromDate, fromTime, carRegistrationNumber);
 		
 		} catch (DAOException e) {

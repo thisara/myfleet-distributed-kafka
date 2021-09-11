@@ -10,11 +10,13 @@ import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.thisara.exception.messenger.ExceptionMessenger;
 import com.thisara.utils.response.ErrorResponse;
 
 /*
@@ -31,6 +33,9 @@ public class ExceptionLogger {
 	
 	Logger logger = Logger.getLogger(ExceptionLogger.class.getName());
 	
+	@Autowired
+	public ExceptionMessenger exceptionMessenger;
+	
 	@SuppressWarnings("unchecked")
 	@Around("ExceptionPointCuts.exceptionHandller()")
 	public Object logException(ProceedingJoinPoint joinPoint) throws Throwable{
@@ -46,7 +51,7 @@ public class ExceptionLogger {
 		
 		logger.info(exceptionLog.toPrettyString());
 
-		//TODO - Connect to logging stream & push message
+		exceptionMessenger.publishMessage(errorId,exceptionLog.toPrettyString());
 	
 		return proceed;
 	}

@@ -53,8 +53,11 @@ public class ExceptionLogger {
 		Object proceed = joinPoint.proceed();
 		
 		Object stackTrace = joinPoint.getArgs()[0];
+		
 		Signature signature = joinPoint.getSignature();
+		
 		ResponseEntity<ErrorResponse> apiResponse = (ResponseEntity<ErrorResponse>)proceed;
+		
 		String errorId = apiResponse.getBody().getErrorid();
 
 		JSONObject serverInfo = getServerInfo();
@@ -83,67 +86,4 @@ public class ExceptionLogger {
 		return serverInfo;
 	}
 	
-	/*
-	//Remove
-	public ObjectNode createExceptionJson(String errorId, Signature signature, ResponseEntity<ErrorResponse> apiResponse, Object stackTrace) {
-		
-		ObjectMapper objectMapper = new ObjectMapper();
-		
-		ObjectNode exceptionLog = objectMapper.createObjectNode();
-		
-		exceptionLog.put("error-id", errorId);
-		
-		ObjectNode exceptionDetail = objectMapper.createObjectNode();
-		
-		exceptionDetail.put("signature", signature.toString());
-		exceptionDetail.put("api-response", apiResponse.toString());
-		exceptionDetail.put("stacktrace", stackTrace.toString());
-		
-		exceptionLog.set("exception-detail", exceptionDetail);
-		
-		return exceptionLog;
-	}
-	
-	public void messagePublisher(String key, String message) {
-		
-		String topic = "myfleet_error_log";
-		
-		Properties properties = new Properties();
-		
-		//Assign localhost id
-		properties.put("bootstrap.servers", "192.168.1.7:9092,192.168.1.8:9092");
-		
-		//Set acknowledgements for producer requests. 
-		properties.put("acks", "all");
-		
-		//If the request fails, the producer can automatically retry,
-		properties.put("retries", 5);
-		
-		//Specify buffer size in config
-		properties.put("batch.size", 16384);
-		
-		//Reduce the no of requests less than 0  
-		properties.put("linger.ms", 1);
-		
-		//The buffer.memory controls the total amount of memory available to the producer for buffering.   
-		properties.put("buffer.memory", 33554432);
-		
-		properties.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
-		
-		properties.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
-		
-		try {
-			
-		Producer<String, String> producer = new KafkaProducer<String, String>(properties);
-		
-		producer.send(new ProducerRecord<String, String>(topic,key, message));
-		
-		System.out.println("Message sent successfully");
-		
-		producer.close();
-		
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-	}*/
 }
