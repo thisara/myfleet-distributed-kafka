@@ -26,3 +26,8 @@ hs_err_pid*
 target/
 dist/
 /.metadata/
+
+.settings
+.mvn
+.classpath
+.project
