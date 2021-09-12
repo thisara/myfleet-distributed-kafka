@@ -1,0 +1,2 @@
+[2021-08-17 01:34:16,725] INFO Unable to read additional data from server sessionid 0x7000032c16c0000, likely server has closed socket, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+[2021-08-17 01:34:17,526] INFO Opening socket connection to server 192.168.1.4/192.168.1.4:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)

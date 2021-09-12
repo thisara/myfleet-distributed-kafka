@@ -1,0 +1,4 @@
+[2021-09-08 00:33:33,896] INFO [GroupCoordinator 87]: Member[group.instance.id None, member.id consumer-console-consumer-12066-1-beb8bbaf-a67f-4adc-82f6-7b3130c5cb0e] in group console-consumer-12066 has left, removing it from the group (kafka.coordinator.group.GroupCoordinator)
+[2021-09-08 00:33:33,896] INFO [GroupCoordinator 87]: Preparing to rebalance group console-consumer-12066 in state PreparingRebalance with old generation 1 (__consumer_offsets-36) (reason: removing member consumer-console-consumer-12066-1-beb8bbaf-a67f-4adc-82f6-7b3130c5cb0e on LeaveGroup) (kafka.coordinator.group.GroupCoordinator)
+[2021-09-08 00:33:33,896] INFO [GroupCoordinator 87]: Group console-consumer-12066 with generation 2 is now empty (__consumer_offsets-36) (kafka.coordinator.group.GroupCoordinator)
+[2021-09-08 00:41:40,791] INFO [GroupMetadataManager brokerId=87] Group console-consumer-12066 transitioned to Dead in generation 2 (kafka.coordinator.group.GroupMetadataManager)

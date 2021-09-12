@@ -1,0 +1,6 @@
+[2021-08-28 16:23:03,213] INFO [ProducerStateManager partition=myfleet_info_log-0] Writing producer snapshot at offset 136 (kafka.log.ProducerStateManager)
+[2021-08-28 16:23:03,213] INFO [ProducerStateManager partition=myfleet_info_log-1] Writing producer snapshot at offset 138 (kafka.log.ProducerStateManager)
+[2021-08-28 16:23:03,224] INFO [Log partition=myfleet_info_log-0, dir=/home/thisara/kafka-mars/kafka-logs] Rolled new log segment at offset 136 in 13 ms. (kafka.log.Log)
+[2021-08-28 16:23:03,227] INFO [Log partition=myfleet_info_log-1, dir=/home/thisara/kafka-mars/kafka-logs] Rolled new log segment at offset 138 in 17 ms. (kafka.log.Log)
+[2021-08-28 16:23:03,662] INFO [ProducerStateManager partition=myfleet_user_error_log-0] Writing producer snapshot at offset 5 (kafka.log.ProducerStateManager)
+[2021-08-28 16:23:03,669] INFO [Log partition=myfleet_user_error_log-0, dir=/home/thisara/kafka-mars/kafka-logs] Rolled new log segment at offset 5 in 7 ms. (kafka.log.Log)

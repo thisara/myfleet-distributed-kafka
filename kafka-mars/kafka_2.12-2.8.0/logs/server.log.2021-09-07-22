@@ -1,0 +1,3 @@
+[2021-09-07 22:00:07,781] INFO [GroupCoordinator 87]: Member[group.instance.id None, member.id consumer-errorMonitor-1-71bb6a8d-06db-4063-9a37-fe3c58af5c85] in group errorMonitor has left, removing it from the group (kafka.coordinator.group.GroupCoordinator)
+[2021-09-07 22:00:07,781] INFO [GroupCoordinator 87]: Preparing to rebalance group errorMonitor in state PreparingRebalance with old generation 33 (__consumer_offsets-28) (reason: removing member consumer-errorMonitor-1-71bb6a8d-06db-4063-9a37-fe3c58af5c85 on LeaveGroup) (kafka.coordinator.group.GroupCoordinator)
+[2021-09-07 22:00:07,782] INFO [GroupCoordinator 87]: Group errorMonitor with generation 34 is now empty (__consumer_offsets-28) (kafka.coordinator.group.GroupCoordinator)

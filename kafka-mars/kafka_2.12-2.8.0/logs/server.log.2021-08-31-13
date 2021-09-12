@@ -1,0 +1,7 @@
+[2021-08-31 13:55:52,916] INFO [Log partition=myfleet_sedat001_error_log-1, dir=/home/thisara/kafka-mars/kafka-logs] Incremented log start offset to 9 due to leader offset increment (kafka.log.Log)
+[2021-08-31 13:57:01,966] INFO [Log partition=myfleet_sedat001_error_log-1, dir=/home/thisara/kafka-mars/kafka-logs] Rolled new log segment at offset 9 in 0 ms. (kafka.log.Log)
+[2021-08-31 13:57:01,966] INFO [Log partition=myfleet_sedat001_error_log-1, dir=/home/thisara/kafka-mars/kafka-logs] Deleting segment LogSegment(baseOffset=0, size=9393, lastModifiedTime=1629793889000, largestRecordTimestamp=Some(1629793536890)) due to retention time 604800000ms breach based on the largest record timestamp in the segment (kafka.log.Log)
+[2021-08-31 13:58:01,969] INFO [Log partition=myfleet_sedat001_error_log-1, dir=/home/thisara/kafka-mars/kafka-logs] Deleting segment files LogSegment(baseOffset=0, size=9393, lastModifiedTime=1629793889000, largestRecordTimestamp=Some(1629793536890)) (kafka.log.Log)
+[2021-08-31 13:58:01,969] INFO Deleted log /home/thisara/kafka-mars/kafka-logs/myfleet_sedat001_error_log-1/00000000000000000000.log.deleted. (kafka.log.LogSegment)
+[2021-08-31 13:58:01,969] INFO Deleted offset index /home/thisara/kafka-mars/kafka-logs/myfleet_sedat001_error_log-1/00000000000000000000.index.deleted. (kafka.log.LogSegment)
+[2021-08-31 13:58:01,969] INFO Deleted time index /home/thisara/kafka-mars/kafka-logs/myfleet_sedat001_error_log-1/00000000000000000000.timeindex.deleted. (kafka.log.LogSegment)

@@ -1,0 +1,2 @@
+[2021-08-24 16:51:50,167] INFO [GroupMetadataManager brokerId=87] Group errorMonitor transitioned to Dead in generation 8 (kafka.coordinator.group.GroupMetadataManager)
+[2021-08-24 16:51:50,168] INFO [GroupMetadataManager brokerId=87] Removed 2 expired offsets in 2 milliseconds. (kafka.coordinator.group.GroupMetadataManager)

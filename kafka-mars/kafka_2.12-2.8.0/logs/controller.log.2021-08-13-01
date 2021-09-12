@@ -1,0 +1,2 @@
+[2021-08-13 01:12:46,527] INFO [ControllerEventThread controllerId=87] Starting (kafka.controller.ControllerEventManager$ControllerEventThread)
+[2021-08-13 01:12:46,534] DEBUG [Controller id=87] Broker 88 has been elected as the controller, so stopping the election process. (kafka.controller.KafkaController)

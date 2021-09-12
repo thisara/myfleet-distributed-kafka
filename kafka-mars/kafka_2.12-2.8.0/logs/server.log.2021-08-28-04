@@ -1,0 +1,4 @@
+[2021-08-28 04:35:41,205] INFO Unable to read additional data from server sessionid 0x700005424210000, likely server has closed socket, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+[2021-08-28 04:35:41,363] INFO Opening socket connection to server 192.168.1.8/192.168.1.8:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2021-08-28 04:35:47,368] WARN Client session timed out, have not heard from server in 6063ms for sessionid 0x700005424210000 (org.apache.zookeeper.ClientCnxn)
+[2021-08-28 04:35:47,368] INFO Client session timed out, have not heard from server in 6063ms for sessionid 0x700005424210000, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
