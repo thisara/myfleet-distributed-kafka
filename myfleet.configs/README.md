@@ -1,29 +1,10 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+The separated application configuration, which is configuration as code located with this repo. This is not executable since it is only for configuration, however path to remote or local url or file path to this repo has to be configured on the configuration server. 
 
-### What is this repository for? ###
+The configuration server will checkout the master branch of this repo to load the deliver the configuration for microservices which are requesting for these config values. 
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+### Tech stack ###
 
-### How do I get set up? ###
+- Git
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
