@@ -15,6 +15,7 @@ This project is developed to demonstrate the capabilities of Apache Kafka and it
 4. Car Microservice - /myfleet-cars
 5. Trip Microservice - /myfleet-trips
 6. Kafka Stream Project - /sedat001
+7. Kafka Message Consumer - /kafka-message-consumer
 
 ## Demo Video Reference : https://youtu.be/OvK91sFoHLk ##
 

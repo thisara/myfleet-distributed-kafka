@@ -1,15 +1,11 @@
 package com.thisara.exception.handler;
 
-import java.util.logging.Logger;
-
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.Signature;
-import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
@@ -31,7 +27,7 @@ import com.thisara.utils.response.ErrorResponse;
 @Component
 public class ExceptionLogger {
 	
-	Logger logger = Logger.getLogger(ExceptionLogger.class.getName());
+	private Logger logger = LoggerFactory.getLogger(ExceptionLogger.class);
 	
 	@Autowired
 	public ExceptionMessenger exceptionMessenger;

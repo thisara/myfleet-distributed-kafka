@@ -15,7 +15,6 @@ import org.springframework.stereotype.Repository;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mongodb.MongoClient;
-import com.mongodb.MongoClientOptions;
 import com.mongodb.client.MongoCollection;
 
 /*
@@ -83,8 +82,8 @@ public class JavaMongoConnect {
 					.append("status", defaultStatus)
 					.append("reported_date", localDateTime)
 					.append("reported_by", creator)
-					.append("updated_date", "")
-					.append("updated_by", "");
+					.append("updated_date", LocalDateTime.now())
+					.append("updated_by", LocalDateTime.now());
 					
 			logger.info("Inserting " + errorLog);
 			

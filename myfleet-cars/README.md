@@ -2,7 +2,7 @@
 
 - This is the car microservice which is a part of myfleet.
 
-## Tech Stack 
+## Tech Stack ##
 
 - Java 8
 - Springboot
@@ -10,30 +10,15 @@
 - H2 DB
 - Model Mapper
 
-## Setup Guide 
+## Setup Guide ##
 
-##### Dependancy Setup
-
-##### Validators :
-1. Clone the Code : `` git clone git@bitbucket.org:thisara_udaya/myfleet.validators.git -b expnval ``
-
-2. Install Dependencies : `` mvnw install ``
-
-##### Utils :
-1. Clone the Code : `` git clone git@bitbucket.org:thisara_udaya/myfleet.utils.git -b expnval ``
-
-2. Install Dependencies : `` mvnw install ``
-
-##### Microservice Setup
-1. Clone the Code : `` git clone git@bitbucket.org:thisara_udaya/myfleet-cars.git -b expnval ``
-
-2. Update the validate and utils target file path on pom.xml
+1. Update the validate and utils checkout file paths on pom.xml
 
 2. Install Dependencies : `` mvnw install ``
 
 3. Run the Code : `` mvnw spring-boot:run ``
 
-## APIs
+## APIs ##
 
 > GET http://localhost:8081/cars/search/:carId
 
@@ -43,7 +28,7 @@
 
 > DELETE http://localhost:8081/cars
 
-## ERROR Codes
+## ERROR Codes ##
 
 	Data Access Layer
 
@@ -66,4 +51,4 @@
 	CO-DAT002 - Null Pointer, Illegal Argument Exception, Data Integrity Violation Exception
 	GEN000 - Unhanddled Exception
 	
-#### Demo video link :  https://www.youtube.com/watch?v=Lkq9-srSWbc
+## Demo video link :  https://youtu.be/OvK91sFoHLk ##

@@ -83,14 +83,14 @@
 			<artifactId>myfleet.validators</artifactId>
 			<version>1.0.0</version>
 			<scope>system</scope>
-			<systemPath>/home/thisara/myfleet-distributed-kafka/myfleet.validators/target/myfleet.validators-1.0.0.jar</systemPath>
+			<systemPath>[please provide code checkout root]/myfleet-distributed-kafka/myfleet.validators/target/myfleet.validators-1.0.0.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>com.thisara</groupId>
 			<artifactId>myfleet.utils</artifactId>
 			<version>1.0.0</version>
 			<scope>system</scope>
-			<systemPath>/home/thisara/myfleet-distributed-kafka/myfleet.utils/target/myfleet.utils-1.0.0.jar</systemPath>
+			<systemPath>[please provide code checkout root]/myfleet-distributed-kafka/myfleet.utils/target/myfleet.utils-1.0.0.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.kafka</groupId>

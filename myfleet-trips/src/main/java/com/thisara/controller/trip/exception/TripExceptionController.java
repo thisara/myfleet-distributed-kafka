@@ -20,8 +20,6 @@ import com.thisara.utils.ExceptionFormatter;
 @ControllerAdvice("com.thisara.controller.trip")
 public class TripExceptionController extends ExceptionController{
 
-	private static final Logger logger = Logger.getLogger(TripExceptionController.class.getName());
-
 	@Autowired
 	ModelMapper modelMapper;
 	

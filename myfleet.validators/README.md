@@ -2,15 +2,13 @@
 
 - This is the reusable jar including all the custom validators.
 
-## Tech Stack 
+## Tech Stack ##
 
 - Java 8
 - Springboot
 
-## Setup Guide 
+## Setup Guide ##
 
-1. Clone the Code : `` git clone git@bitbucket.org:thisara_udaya/myfleet.validators.git -b expnval ``
-
-2. Install Dependencies : `` mvnw install ``
+1. Install Dependencies : `` mvnw install ``
 	
-#### Demo video link :  https://www.youtube.com/watch?v=Lkq9-srSWbc
+## Demo video link :  https://youtu.be/OvK91sFoHLk ##

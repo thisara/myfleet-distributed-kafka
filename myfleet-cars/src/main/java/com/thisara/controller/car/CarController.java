@@ -2,7 +2,6 @@ package com.thisara.controller.car;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.logging.Logger;
 
 import javax.validation.Valid;
 
@@ -42,8 +41,6 @@ import com.thisara.validators.Size;
 @RefreshScope
 @RequestMapping("/cars")
 public class CarController {
-
-	private static Logger logger = Logger.getLogger(CarController.class.getName());
 
 	@Autowired
 	private CarService carService;

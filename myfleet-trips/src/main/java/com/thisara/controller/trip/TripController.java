@@ -2,7 +2,6 @@ package com.thisara.controller.trip;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.logging.Logger;
 
 import javax.validation.Valid;
 
@@ -45,8 +44,6 @@ import com.thisara.validators.Size;
 @RefreshScope
 @RequestMapping("/trips")
 public class TripController {
-
-	private static Logger logger = Logger.getLogger(TripController.class.getName());
 	
 	@Autowired
 	public TripService tripService;

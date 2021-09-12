@@ -3,7 +3,6 @@ package com.thisara.dao;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Logger;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -12,6 +11,8 @@ import javax.persistence.QueryTimeoutException;
 
 import org.hibernate.exception.ConstraintViolationException;
 import org.hibernate.exception.DataException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import com.thisara.dao.exception.DAOException;
@@ -32,7 +33,7 @@ import com.thisara.utils.datetime.DateTimeParser;
 @Repository
 public class TripDAOImpl implements TripDAO {
 
-	private static final Logger logger = Logger.getLogger(TripDAOImpl.class.getName());
+	private Logger logger = LoggerFactory.getLogger(TripDAOImpl.class);
 
 	@PersistenceContext
 	private EntityManager entityManager;
@@ -61,17 +62,17 @@ public class TripDAOImpl implements TripDAO {
 			}
 
 		} catch (QueryTimeoutException e) {
-			logger.severe(e.getMessage());
+			logger.error(e.getMessage());
 			throw new DAOException("Query timeout exception", ErrorCodes.DADAO001);
 		} catch (DataException e) {
-			logger.severe(e.getMessage());
+			logger.error(e.getMessage());
 			throw new DAOException("Data exception", ErrorCodes.DADAT002);
 		}catch (DateTimeParseException e) {
-			logger.severe(e.getMessage());
+			logger.error(e.getMessage());
 			throw new DAOException("DateTime parse exception", ErrorCodes.DADAT002);
 		} catch (Exception e) {
 			e.printStackTrace();
-			logger.severe(e.getMessage());
+			logger.error(e.getMessage());
 			throw new DAOException("General exception", ErrorCodes.DAGEN001);
 		}
 
@@ -100,13 +101,13 @@ public class TripDAOImpl implements TripDAO {
 			}
 
 		} catch (QueryTimeoutException e) {
-			logger.severe(e.getMessage());
+			logger.error(e.getMessage());
 			throw new DAOException("Query timeout exception", ErrorCodes.DADAT001);
 		} catch (DataException e) {
-			logger.severe(e.getMessage());
+			logger.error(e.getMessage());
 			throw new DAOException("Data error", ErrorCodes.DADAT002);
 		} catch (Exception e) {
-			logger.severe(e.getMessage());
+			logger.error(e.getMessage());
 			throw new DAOException("General exception", ErrorCodes.DAGEN001);
 		}
 
@@ -123,10 +124,10 @@ public class TripDAOImpl implements TripDAO {
 			entityManager.persist(trip);
 
 		} catch (ConstraintViolationException e) {
-			logger.severe(e.getMessage());
+			logger.error(e.getMessage());
 			throw new DAOException("Constraint violation", ErrorCodes.DADAT002);
 		} catch (Exception e) {
-			logger.severe(e.getMessage());
+			logger.error(e.getMessage());
 			throw new DAOException("General exception", ErrorCodes.DAGEN001);
 		}
 	}

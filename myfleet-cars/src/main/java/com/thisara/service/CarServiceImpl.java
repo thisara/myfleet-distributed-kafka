@@ -1,12 +1,13 @@
 package com.thisara.service;
 
 import java.util.List;
-import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 import javax.transaction.Transactional;
 
 import org.modelmapper.ModelMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,7 +33,7 @@ import com.thisara.utils.audit.RecordAuditor;
 @Service
 public class CarServiceImpl implements CarService {
 
-	private Logger logger = Logger.getLogger(CarServiceImpl.class.getName());
+	private Logger logger = LoggerFactory.getLogger(CarServiceImpl.class);
 	
 	@Autowired
 	private CarDAO carDAO;
@@ -52,7 +53,7 @@ public class CarServiceImpl implements CarService {
 			car = carDAO.getCar(registrationNumber);
 
 		} catch (DAOException e) {
-			logger.severe(e.getMessage());
+			logger.error(e.getMessage());
 			throw new ServiceException(e.getMessage(), e.getErrorCode());
 		}
 
@@ -69,7 +70,7 @@ public class CarServiceImpl implements CarService {
 			cars = carDAO.search(registrationNumber);
 
 		} catch (DAOException e) {
-			logger.severe(e.getMessage());
+			logger.error(e.getMessage());
 			throw new ServiceException(e.getMessage(), e.getErrorCode());
 		}
 
@@ -107,10 +108,10 @@ public class CarServiceImpl implements CarService {
 			carDAO.save(car);
 			
 		} catch (DAOException e) {
-			logger.severe(e.getMessage());
+			logger.error(e.getMessage());
 			throw new ServiceException(e.getMessage(), e.getErrorCode());
 		} catch (Exception e) {
-			logger.severe(e.getMessage());
+			logger.error(e.getMessage());
 			throw new ServiceException(e.getMessage(), ErrorCodes.SEGEN002);
 		}
 	}
@@ -123,7 +124,7 @@ public class CarServiceImpl implements CarService {
 			carDAO.update(car);
 
 		} catch (DAOException e) {
-			logger.severe(e.getMessage());
+			logger.error(e.getMessage());
 			throw new ServiceException(e.getMessage(), e.getErrorCode());
 		}
 	}
@@ -141,7 +142,7 @@ public class CarServiceImpl implements CarService {
 			carDAO.remove(car);
 
 		} catch (DAOException e) {
-			logger.severe(e.getMessage());
+			logger.error(e.getMessage());
 			throw new ServiceException(e.getMessage(), e.getErrorCode());
 		}
 	}

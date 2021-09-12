@@ -1,12 +1,12 @@
 package com.thisara.dao;
 
-import java.util.logging.Logger;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.PersistenceContext;
 
 import org.hibernate.exception.ConstraintViolationException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import com.thisara.dao.exception.DAOException;
@@ -25,7 +25,7 @@ import com.thisara.utils.audit.RecordAuditor;
 @Repository
 public class DriverDAOImpl implements DriverDAO {
 
-	private static Logger logger = Logger.getLogger(DriverDAOImpl.class.getName());
+	private Logger logger = LoggerFactory.getLogger(DriverDAOImpl.class);
 
 	@PersistenceContext
 	private EntityManager entityManager;
@@ -40,10 +40,10 @@ public class DriverDAOImpl implements DriverDAO {
 			driver = entityManager.getReference(Driver.class, id);
 
 		} catch (EntityNotFoundException e) {
-			logger.severe(e.getMessage());
+			logger.error(e.getMessage());
 			throw new DAOException("Entity not found", ErrorCodes.DADAT001);
 		} catch (Exception e) {
-			logger.severe(e.getMessage());
+			logger.error(e.getMessage());
 			throw new DAOException("General exception", ErrorCodes.DAGEN001);
 		}
 
@@ -60,10 +60,10 @@ public class DriverDAOImpl implements DriverDAO {
 			entityManager.persist(driver);
 			
 		} catch (ConstraintViolationException e) {
-			logger.severe(e.getMessage());
+			logger.error(e.getMessage());
 			throw new DAOException("Constraint violation", ErrorCodes.DADAT002);
 		} catch (Exception e) {
-			logger.severe(e.getMessage());
+			logger.error(e.getMessage());
 			throw new DAOException("General exception", ErrorCodes.DAGEN001);
 		}
 		

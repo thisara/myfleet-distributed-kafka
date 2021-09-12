@@ -1,8 +1,8 @@
 package com.thisara.exception.handler;
 
-import java.util.logging.Logger;
-
 import org.modelmapper.ModelMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +24,7 @@ import com.thisara.utils.response.ErrorResponse;
 @ControllerAdvice
 public class ExceptionAdvice {
 
-	private static final Logger logger = Logger.getLogger(ExceptionAdvice.class.getName());
+	private Logger logger = LoggerFactory.getLogger(ExceptionAdvice.class);
 
 	@Autowired
 	ModelMapper modelMapper;
@@ -34,7 +34,7 @@ public class ExceptionAdvice {
 	
 	@ExceptionHandler(value = { Exception.class })
 	public ResponseEntity<ErrorResponse> handleException(Exception e) {
-		logger.severe(e.getMessage());
+		logger.error(e.getMessage());
 		e.printStackTrace();
 		return exceptionFormatter.composeErrorResponse(ErrorCodes.GEN000, "General Error", HttpStatus.BAD_GATEWAY);
 	}

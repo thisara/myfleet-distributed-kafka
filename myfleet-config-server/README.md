@@ -2,22 +2,20 @@
 
 - This is the configuration server implemented with spring-config-server.
 
-## Tech Stack 
+## Tech Stack ##
 
 - Java 8
 - Springboot
 - Spring Config Server
 
-## Setup Guide 
+## Setup Guide ##
 
-1. Clone the Code : `` git clone git@bitbucket.org:thisara_udaya/myfleet-config-server.git -b expnval ``
+1. Change the git repo path in application.properties as per your local repo checkout file path.
 
-2. Change the git repo path in application.properties as per your local file path.
+2. Install Dependencies : `` mvnw install ``
 
-3. Install Dependencies : `` mvnw install ``
-
-4. Run the Code : `` mvnw spring-boot:run ``
+3. Run the Code : `` mvnw spring-boot:run ``
 
 Note : Make sure you read from master branch of the git repo.
 	
-#### Demo video link :  https://www.youtube.com/watch?v=Lkq9-srSWbc
+## Demo video link :  https://youtu.be/OvK91sFoHLk ##

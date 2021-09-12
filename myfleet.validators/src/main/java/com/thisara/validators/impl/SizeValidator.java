@@ -19,8 +19,6 @@ import com.thisara.validators.Size;
  * @since 2021-05-30
  */
 public class SizeValidator implements ConstraintValidator<Size, CharSequence>{
-
-	Logger logger = Logger.getLogger(SizeValidator.class.getName());
 	
     private final PropertyResolver propertyResolver;
     private int min;

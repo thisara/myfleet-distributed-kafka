@@ -3,7 +3,6 @@ package com.thisara.controller.dto.car.transform;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import org.jboss.logging.Logger;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -24,8 +23,6 @@ public class CarDTOTransformerImpl implements CarDTOTransformer {
 
 	@Autowired
 	public ModelMapper modelMapper;
-
-	public Logger logger = Logger.getLogger(CarDTOTransformerImpl.class.getName());
 
 	@Override
 	public List<GetCarResponse> getCarResponses(List<Car> carList) {

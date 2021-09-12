@@ -8,13 +8,14 @@ import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import org.jboss.logging.Logger;
 import org.modelmapper.Converter;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeMap;
 import org.modelmapper.config.Configuration;
 import org.modelmapper.convention.MatchingStrategies;
 import org.modelmapper.spi.MappingContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -36,7 +37,7 @@ public class TripDTOTransformerImpl implements TripDTOTransformer {
 	@Autowired
 	public ModelMapper modelMapper;
 
-	public Logger logger = Logger.getLogger(TripDTOTransformerImpl.class.getName());
+	Logger logger = LoggerFactory.getLogger(TripDTOTransformerImpl.class);
 
 	@Value("${trip.datetime.pattern}")
 	private String dateTimePattern;

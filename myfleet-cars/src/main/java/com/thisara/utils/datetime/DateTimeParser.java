@@ -8,7 +8,9 @@ import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.logging.Logger;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /*
  * Copyright the original author.
@@ -20,7 +22,7 @@ import java.util.logging.Logger;
  */
 public class DateTimeParser {
 
-	private static Logger logger = Logger.getLogger(DateTimeParser.class.getName());
+	private Logger logger = LoggerFactory.getLogger(DateTimeParser.class);
 
 	private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 	private static final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");

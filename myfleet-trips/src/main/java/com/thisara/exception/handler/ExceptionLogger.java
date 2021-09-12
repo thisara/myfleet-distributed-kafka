@@ -67,8 +67,6 @@ public class ExceptionLogger {
 		logger.error(exceptionLog.toPrettyString());
 		
 		exceptionMessenger.publishMessage(errorId,exceptionLog.toPrettyString());
-		
-		//messagePublisher(errorId,exceptionLog.toPrettyString());
 	
 		return proceed;
 	}

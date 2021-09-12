@@ -1,8 +1,10 @@
 package com.thisara.controller.car.exception;
 
-import java.util.logging.Logger;
+import static com.thisara.controller.exception.ExceptionController.logger;
 
 import org.modelmapper.ModelMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
@@ -26,7 +28,7 @@ import com.thisara.utils.response.ErrorResponse;
 @ControllerAdvice("com.thisara.controller.car")
 public class CarExceptionController extends ExceptionController{
 
-	private static final Logger logger = Logger.getLogger(CarExceptionController.class.getName());
+	private Logger logger = LoggerFactory.getLogger(CarExceptionController.class);
 	
 	@Autowired
 	ModelMapper modelMapper;
@@ -36,7 +38,7 @@ public class CarExceptionController extends ExceptionController{
 
 	@ExceptionHandler(value = { DataIntegrityViolationException.class })
 	public ResponseEntity<ErrorResponse> handleException(DataIntegrityViolationException e) {
-		logger.severe(e.getMessage());
+		logger.error(e.getMessage());
 		return exceptionFormatter.composeErrorResponse(ErrorCodes.CODAT002, "Record already exist", HttpStatus.BAD_REQUEST);
 	}
 }
