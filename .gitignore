@@ -31,3 +31,4 @@ dist/
 .mvn
 .classpath
 .project
+/bin
